@@ -23,8 +23,8 @@ class GestionArticles
      * @return Response
      */
     public function __invoke(Request $request,
-                                        EntityManagerInterface $entityManager,
-                                        GestionArticlePresenterInterface $gestionArticlePresenter): Response
+                             EntityManagerInterface $entityManager,
+                             GestionArticlePresenterInterface $gestionArticlePresenter): Response
     {
         $articles = $entityManager->getRepository(Article::class)->findAll();
         return $gestionArticlePresenter->present(new GestionArticlesResponder($articles));

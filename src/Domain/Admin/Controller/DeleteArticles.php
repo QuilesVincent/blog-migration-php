@@ -24,9 +24,9 @@ class DeleteArticles
      * @return Response
      */
     public function __invoke(Request $request,
-                                               Article $article,
-                                               EntityManagerInterface $entityManager,
-                                               UrlGeneratorInterface $urlGenerator): Response
+                             Article $article,
+                             EntityManagerInterface $entityManager,
+                             UrlGeneratorInterface $urlGenerator): Response
     {
         $entityManager->remove($article);
         $entityManager->flush();

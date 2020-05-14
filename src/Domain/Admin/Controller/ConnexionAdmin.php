@@ -25,9 +25,9 @@ class ConnexionAdmin
      * @return Response
      */
     public function __invoke(Request $request,
-                                       AuthenticationUtils $authenticationUtils,
-                                       FormFactoryInterface $formFactory,
-                                       ConnexionAdminPresenterInterface $connexionAdminPresenter): Response
+                             AuthenticationUtils $authenticationUtils,
+                             FormFactoryInterface $formFactory,
+                             ConnexionAdminPresenterInterface $connexionAdminPresenter): Response
     {
         $form = $formFactory->create(UserType::class, new Credentials($authenticationUtils->getLastUsername()))->handleRequest($request);
         if (null !== $authenticationUtils->getLastAuthenticationError(false)) {
